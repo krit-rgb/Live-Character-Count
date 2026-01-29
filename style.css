@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f4f6f8;
+}
+
+.container {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    resize: none;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+}
+
+/* Visual feedback */
+textarea.warning {
+    border-color: orange;
+}
+
+textarea.limit {
+    border-color: red;
+}
+
+.counter {
+    margin-top: 8px;
+    text-align: right;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        margin: 20px;
+    }
+}
