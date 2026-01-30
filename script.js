@@ -1,18 +1,20 @@
-const textarea = document.getElementById("textInput");
-const count = document.getElementById("count");
-const maxLength = 150;
+const textInput = document.getElementById("textInput");
+const charCount = document.getElementById("charCount");
+const counterDiv = document.querySelector(".counter");
 
-textarea.addEventListener("input", () => {
-    const length = textarea.value.length;
-    count.textContent = length;
+const maxLength = 200;
 
-    textarea.classList.remove("warning", "limit");
+textInput.addEventListener("input", () => {
+    const currentLength = textInput.value.length;
+    charCount.textContent = currentLength;
 
-    if (length >= 120 && length < maxLength) {
-        textarea.classList.add("warning");
+    counterDiv.classList.remove("warning", "limit");
+
+    if (currentLength >= maxLength * 0.8 && currentLength < maxLength) {
+        counterDiv.classList.add("warning");
     }
 
-    if (length === maxLength) {
-        textarea.classList.add("limit");
+    if (currentLength === maxLength) {
+        counterDiv.classList.add("limit");
     }
 });
